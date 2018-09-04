@@ -4,4 +4,4 @@ a Microsoft Azure blob storageba.
 
 Az applikáción további fejlesztések lesznek az elkövetkezendő félévben.
 
-Szakdolgozat tervek: CI és Sonarqube, Google Assistant, UI és UX feljesztés
+Szakdolgozat tervek: CI és Sonarqube, Google Assistant, UI és UX feljesztés 
