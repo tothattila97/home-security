@@ -13,6 +13,7 @@ import java.nio.ByteBuffer;
 import java.util.concurrent.BlockingQueue;
 
 import production.toth.attila.homesecurity.Kryonet.SignalClient;
+import production.toth.attila.homesecurity.network.RetrofitUploadImpl;
 
 public class ImageConsumer implements Runnable {
 
@@ -54,10 +55,10 @@ public class ImageConsumer implements Runnable {
                 //Log.i("homesecurity" ,"Elindult, a start time: " + starttime);
                 //compareTheDifferenceBetweenBitmaps(firstbitmap,secondbitmap);
                 double percent = getDifferenceInPercent(firstbitmap, secondbitmap);
-                if(percent > 10) {
+                if(percent > 3) {
                     callback.playRingtone();
                     File uploadFile = persistImage(firstbitmap, "betoromegtalalva");
-                    //new RetrofitUploadImpl(uploadFile);  //TODO: már elérhető az Azure de kredit spórolás céljából ne töltse fel a képeket.
+                    new RetrofitUploadImpl(uploadFile);  //TODO: már elérhető az Azure de kredit spórolás céljából ne töltse fel a képeket.
                     //asyncUploadImage(firstbitmap);  // .jpg vagy .bmp formatum kellene
                     //SignalServer server = new SignalServer();
                     //SignalClient client = new SignalClient();
